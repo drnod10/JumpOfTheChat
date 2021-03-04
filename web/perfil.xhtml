@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Perfil | Jump of The Ch@t</title>
+        <link rel="icon" href="img/icone.png"></link>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </h:head>
+    <h:body>
+        <h:outputStylesheet library="default" name="CSS/stilo.css"/>
+        <h:form id="perfil">
+            <div bgcolor="black" width="1800px" align="center" style="background:black;color:white;">
+                <img src="img/icone.png" size="50"></img>
+                <img src="img/divisor.png" width="525px"></img>
+                <img src="img/divisor.png" width="525px"></img>
+                <h:commandButton id="sala" value="Sala de Chat" action="sala.xhtml" class="btn btn-secondary"></h:commandButton>
+                <img src="img/divisor.png" width="2px"></img>
+                <h:commandButton id="sair" value="Sair" class="btn btn-secondary" action="index.xhtml"></h:commandButton>
+            </div>
+            <br></br>
+            <br></br>
+            <center>
+                <img src="img/temp.jpg" class="btn btn-outline-dark" height="250px" width="250px"></img>
+                <br></br>
+                <br></br>
+                <h3>#{chatBean.up.nome} #{chatBean.up.sobrenome}</h3><h4>#{chatBean.up.apelido}</h4>
+                <strong>Email: </strong> #{chatBean.up.email} 
+                <br></br>
+                <br></br>
+                <strong>Deseja alterar seus dados?</strong>
+                <br></br>
+                <img src="img/divisor2.png" width="2px"></img>
+                <a href="alterar.xhtml" class="btn btn-secondary">Editar Perfil</a>
+                <img src="img/divisor2.png" width="2px"></img>
+                <h:commandButton id="excluir" value="Excluir Perfil" onclick="return confirm('Tem certeza que deseja excluir ?')" class="btn btn-danger" action="#{chatBean.excluirUsuario()}"></h:commandButton>
+            </center>
+        </h:form>
+    </h:body>
+</html>
+
